@@ -1,0 +1,44 @@
+  @use '../variables/' as *;
+  @use '../functions/' as *;
+
+  .flavor-card{
+    background-color: transparent;
+
+    
+
+    .flavor-pic{
+      aspect-ratio: 1/1;
+      border-radius: 999px;
+      display: block;
+      margin: 0 auto;
+      overflow: hidden;
+      position: relative;
+
+      img{
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        object-fit: cover;
+        vertical-align: bottom;
+      }
+
+    }
+
+    .tea-info{
+      display: grid;
+      grid-auto-rows: min-content;
+
+      .tea-name{
+        font-weight: 700;
+      }
+
+    }
+
+    .card-body{
+      display: flex;
+    }
+
+    
+  }

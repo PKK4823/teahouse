@@ -1,0 +1,285 @@
+  @use '../variables/' as *;
+  @use '../functions/' as *;
+
+
+  .home-main {
+
+
+    // 版面
+    .banner {
+      height: 100vh;
+      // outline: 1px red solid;
+      display: flex;
+      justify-content: center;
+      background-image: url(/public/images/pic/pattern.png);
+      background-size: cover;
+      // align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      
+
+      .wrap{
+        // outline: 1px solid red;
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba($color: #ffffff, $alpha: .7);
+        align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      
+      padding: 20px 50px 0;
+      }
+
+      figure{
+        width: 500px;
+          height:500px;
+        img{
+          width: 100%;
+          height:100%;
+          object-fit: contain;
+        }
+      }
+
+      .brand-name {
+       
+        text-align: center;
+        font-size: 50px;
+          font-family: $family-en;
+          font-weight: 600;
+      }
+
+      .text{
+          font-size: 30px;
+          font-family: $family-en;
+          font-weight: 600;
+          text-align: center;
+
+      }
+    }
+
+    // 品牌理念
+    .concept {
+      height: 90rem;
+      padding-top: 50px;
+      position: relative;
+
+      .title{
+        position: absolute;
+        // outline: 1px solid red;
+        font-weight: 500;
+        font-size: 30px;
+        width: 20rem;
+        top: 10rem;
+        left: 25rem;
+      }
+
+      .concept-text{
+          position: absolute;
+          top: 25rem;
+          left: 25rem;
+          width: 43rem;
+          z-index: 1;
+
+          h2{
+            visibility: visible;
+            
+      
+          }
+
+          .text-box{
+            position: relative;
+            top: 5em;
+
+
+            .text-1,.text-2,.text-3{
+              position: absolute;
+              font-weight: 500;
+              font-size: 20px;
+              font-family: $family-en;
+            }
+
+            .text-1{
+              top: 0;
+            }
+
+            .text-2{
+              top: 10rem;
+            }
+
+            .text-3{
+              top: 20rem;
+            }
+          }
+      }
+
+      .concept-img1{
+        position: absolute;
+        top: 10rem;
+        right: 0;
+        width: 20rem;
+        opacity: .7;
+      }
+
+      .concept-img2{
+         position: absolute;
+        top: 30rem;
+        left: 0rem;
+        width: 24rem;
+        opacity: .7;
+      }
+
+      .concept-img3{
+         position: absolute;
+        top: 50rem;
+        right: 0rem;
+        width: 24rem;
+        opacity: .7;
+      }
+    }
+
+    // 品質的把關
+    .commitment {
+      // outline: 1px solid red;
+      height: auto;
+      margin-top: 3rem;
+      padding-bottom: 50px;
+
+      @media (max-width:770px) {
+        padding-bottom: 20px;
+      }
+
+      .title{
+        // outline: 1px solid red;
+        margin-left: 10rem;
+            width: 20rem;
+      }
+
+      .text{
+        margin-top: 2rem;
+        margin-left: 10rem;
+        width: 80%;
+      }
+
+      .content {
+        width: 100%;
+        @extend %flex-center;
+        margin-top: 20px;
+
+        @media (max-width:770px) {
+          margin-top: 0px;
+        }
+
+        .card-box {
+          // outline: 1px solid red;
+          max-width: 100%;
+          padding:0 30px ;
+          display: flex;
+          flex-wrap: wrap;
+
+
+        }
+      }
+
+    }
+
+    // 規格介紹
+
+    // 我們的茶
+
+    // 最新消息
+
+
+    // 聯絡我們
+    .contact {
+      font-family: $family-en;
+      outline: 1px solid red;
+      position: relative;
+
+
+      text-align: center;
+      // height:30vh ;
+
+      @media (max-width:47.9375em) {
+
+        &::before {
+          height: 7.8rem !important;
+        }
+      }
+
+      .container {
+        color: $text;
+        margin-bottom: 1rem;
+        width: $w-100;
+        max-width: 136.6rem;
+        padding: 0 20% 5vh;
+        margin: 0 auto;
+
+        @media (max-width:47.9375em) {
+          width: 100%;
+          padding: 0 2rem;
+
+
+        }
+
+        .text {
+          font-weight: 600;
+        }
+      }
+
+      // 半色背景
+      &::before {
+        display: inline-block;
+        position: absolute;
+        visibility: initial;
+        bottom: 0;
+        left: 0;
+        width: $w-100;
+        height: 12.7rem;
+        background: $text;
+        background-size: contain;
+        background-repeat: no-repeat;
+        content: "";
+        z-index: -1;
+      }
+
+      .contact-btn {
+        background-color: #d4d1cf;
+        position: relative;
+        transition: opacity .35s cubic-bezier(0.39, 0.575, 0.565, 1);
+        margin-top: 15px;
+        padding: 6.4rem 0;
+        height: 300px;
+
+        @media (max-width:47.9375em) {
+          padding: 4.8rem 0;
+          height: 250px;
+        }
+
+        p {
+          color: $text;
+          font-weight: 600;
+          font-size: 2rem;
+        }
+
+        span {
+          font-size: 28px;
+
+          @media (max-width:47.9375em) {
+            font-size: 24px;
+          }
+        }
+
+        &:hover {
+          background-image: url('/public/images/navBar/pic1.jpg');
+          opacity: 1;
+          // 換完圖片要改成contain&註解打開
+          background-size: cover;
+          // background-repeat: no-repeat;
+          z-index: 1;
+        }
+
+
+      }
+    }
+  }

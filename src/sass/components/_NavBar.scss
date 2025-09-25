@@ -1,0 +1,282 @@
+  @use '../variables/' as *;
+  @use '../functions/' as *;
+
+  .topbar {
+
+
+      font-family: $family-en;
+      font-weight: $f-w-r;
+
+
+      //   outline: 1px solid red;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: $w-100;
+      z-index: $z-ex;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      //   padding: $spacing-md;
+
+      .logo {
+
+          position: relative;
+          width: 150px;
+          //   outline: 1px solid red;
+          margin: 20px 30px;
+
+          p {
+              font-family: $family-display;
+              font-weight: $f-w-m;
+              font-size: 48px;
+          }
+
+      }
+
+      .navbar {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          //   outline: 1px solid red;
+          width: $w-100;
+          position: relative;
+
+          .hamburger {
+              @extend %remove_form_style;
+              background-color: transparent;
+              //   outline: 1px solid red;
+              //   width: 12%;
+              border: none;
+              position: fixed;
+              @extend %flex-column;
+              //   align-items: flex-end;
+              gap: $spacing-sm;
+              //   margin-bottom: $spacing-xxs;
+              //   margin-top: $spacing-xxs;
+              padding: $spacing-md;
+              height: 90px;
+
+              .menu-box {
+                  @extend %flex-center;
+                  flex-direction: column;
+                  gap: $spacing-xs;
+
+
+                  p {
+                      color: $text;
+                      font-weight: $f-w-b;
+                  }
+
+                  .bar {
+                      display: block;
+                      height: 2px;
+                      background-color: $text;
+                      transition: all 0.8s ease;
+                      //   transform: translate(0%, 0.05vw);
+                  }
+              }
+
+
+
+              &.is-active {
+
+                  p {
+                      color: $background;
+                  }
+
+                  .bar {
+                      background-color: $background;
+
+
+
+                      &:nth-child(2) {
+                          transform: translate(0%, 300%) rotate(25deg);
+
+                      }
+
+                      &:last-child {
+                          transform: translate(0%, -300%) rotate(-25deg);
+
+                      }
+                  }
+              }
+
+          }
+
+
+
+          .rightNavBar {
+              //   outline: 1px solid red;
+              width: $w-50;
+              @extend %flex-column;
+              align-items: flex-end;
+              background-color: $text;
+              position: fixed;
+              //   top: 0;
+              right: -50%; // 初始位置在右側外面
+              transition: right 0.6s ease;
+              padding-top: 5vh;
+
+              @media (max-width:900px) {
+                  width: $w-100;
+                  right: -100%;
+              }
+
+
+              &.show {
+                  background-color: $text;
+                  right: 0%;
+              }
+
+
+
+
+              .navigation {
+                  //   outline: 1px solid red;
+                  background-color: $text;
+                  padding: $spacing-sm $spacing-md;
+                  width: $w-50;
+                  height: $h-100vh;
+                  position: fixed;
+                  right: -50%; // 初始位置在右側外面
+                  transition: right 0.6s ease;
+                  @extend %flex-center;
+
+                  @media (max-width:900px) {
+                      width: $w-100;
+                      right: -100%;
+                  }
+
+                  ul {
+                      width: 100%;
+                  }
+
+                  .sitemap_item_content {
+                      //   outline: 1px solid red;
+                      position: relative;
+                      display: flex;
+                      width: $w-90;
+                      max-width: 600px;
+                      margin: $spacing-lg auto $spacing-xxl;
+                      justify-content: space-evenly;
+                      align-items: center;
+                      padding-bottom: $spacing-xs;
+                      border-bottom: 0.5px solid $background;
+
+                      >div {
+                          // outline: 1px solid red;
+                          width: $w-70;
+                          display: flex;
+                          justify-content: space-between;
+
+                          @media (max-width:900px) {
+                              display: flex;
+                              flex-direction: column;
+                              justify-content: center;
+                              align-items: center;
+                          }
+                      }
+
+                      p {
+                          color: $background;
+                          font-size: $f-s-xl;
+                      }
+
+                      img {
+                          width: 24px;
+                          height: 24px;
+                          filter: drop-shadow($background 2px 0);
+                      }
+
+                      &::after {
+                          position: absolute;
+                          bottom: -1px;
+                          left: 0px;
+                          width: 100%;
+                          height: 2px;
+                          background-color: $background;
+                          transform: scaleX(0);
+                          content: "";
+                          transform-origin: left;
+                          transition: 0.3s all ease;
+                      }
+
+                      &:hover {
+                          // outline: 2px solid $background;
+
+                          &::after {
+                              transform: scaleX(1);
+                          }
+                      }
+                  }
+
+                  a {
+                      margin-bottom: 0.2rem;
+                  }
+
+
+
+                  &.show {
+                      right: 0%;
+
+
+                  }
+              }
+
+
+
+          }
+
+          .leftNavBar {
+              width: $w-50;
+              height: $h-100vh;
+              position: fixed;
+              left: -50%;
+              transition: left 0.6s ease;
+              padding-top: 40px;
+              display: flex;
+              justify-content: center;
+
+              @media (max-width:900px) {
+                  display: none;
+              }
+
+              &.show {
+                  background-color: $background;
+                  left: 0%;
+              }
+
+              .mask {
+                  width: $w-50;
+                  height: $h-90vh;
+                  // outline: 1px solid $black;
+                  overflow: hidden;
+                  min-width: 400px;
+                  border-radius: 400px 400px 0 0;
+                  position: relative;
+
+                  img {
+                      width: 100%;
+                      height: 100%;
+                      right: 10px;
+                      object-fit: cover;
+                      // display: none;
+                      position: absolute;
+                      opacity: 0;
+                      transition: opacity 0.5s ease-in-out;
+
+                      &.current {
+                          // display: block;
+                          opacity: 1;
+                      }
+                  }
+
+              }
+          }
+      }
+
+
+
+
+  }

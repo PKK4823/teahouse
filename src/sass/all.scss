@@ -1,0 +1,18 @@
+// variables & functions
+@use './variables/' as *;
+@use './functions/' as *;
+
+// css reset
+@use './reset';
+
+// components & pages
+@use './components/' as *;
+@use './pages/' as *;
+
+// google fonts
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap');
+
+body{
+   font-family:  $family-en;
+   font-weight: 600;
+}
