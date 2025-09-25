@@ -48,7 +48,7 @@ const App = () => {
                 <h2 style={{
                     textAlign: "center",
                     marginBottom: "6px",
-                }}>FAQ標題</h2>
+                }}>常見問題</h2>
 
 
                 {

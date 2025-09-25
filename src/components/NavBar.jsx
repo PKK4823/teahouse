@@ -105,11 +105,11 @@ const NavBar = () => {
                                 </Link>
                             </li>
                             <li >
-                                <Link to="/" className='menu-item-2'>
+                                <Link to="/Informamtion" className='menu-item-2'>
                                     <figure className='sitemap_item_content'>
                                         <p>02</p>
                                         <div>
-                                            <p>About us </p>
+                                            <p>Information </p>
                                             <p>關於我們</p>
                                         </div>
                                         <img src="./images/icon/arrow-w.svg" alt="箭頭" />

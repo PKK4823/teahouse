@@ -9,6 +9,7 @@
     .banner {
       height: 100vh;
       // outline: 1px red solid;
+      width: 100%;
       display: flex;
       justify-content: center;
       background-image: url(/public/images/pic/pattern.png);
@@ -16,44 +17,47 @@
       // align-items: center;
       justify-content: center;
       flex-direction: column;
-      
+      border-radius: 0 0 100px 100px;
+      overflow: hidden;
 
-      .wrap{
+
+      .wrap {
         // outline: 1px solid red;
         display: flex;
         width: 100%;
         height: 100vh;
         background-color: rgba($color: #ffffff, $alpha: .7);
         align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      
-      padding: 20px 50px 0;
+        justify-content: center;
+        flex-direction: column;
+
+        padding: 20px 50px 0;
       }
 
-      figure{
+      figure {
         width: 500px;
-          height:500px;
-        img{
+        height: 500px;
+
+        img {
           width: 100%;
-          height:100%;
+          height: 100%;
           object-fit: contain;
         }
       }
 
       .brand-name {
-       
+
         text-align: center;
         font-size: 50px;
-          font-family: $family-en;
-          font-weight: 600;
+        font-family: $family-en;
+        font-weight: 600;
       }
 
-      .text{
-          font-size: 30px;
-          font-family: $family-en;
-          font-weight: 600;
-          text-align: center;
+      .text {
+        font-size: 30px;
+        font-family: $family-en;
+        font-weight: 600;
+        text-align: center;
 
       }
     }
@@ -63,84 +67,114 @@
       height: 90rem;
       padding-top: 50px;
       position: relative;
+      @extend %flex-column;
+      // justify-content: center;
+      align-items: center;
 
-      .title{
-        position: absolute;
+      .title {
+        // position: absolute;
         // outline: 1px solid red;
         font-weight: 500;
         font-size: 30px;
         width: 20rem;
-        top: 10rem;
-        left: 25rem;
+        margin-top: 5em;
+        margin-bottom: 50px;
+        // top: 10rem;
+        // left: 45rem;
       }
 
-      .concept-text{
-          position: absolute;
-          top: 25rem;
-          left: 25rem;
-          width: 43rem;
-          z-index: 1;
+      .concept-text {
+        // outline: 1px solid red;
+        // position: absolute;
+        // top: 25rem;
+        // left: 35rem;
+        // width: 43rem;
+        z-index: 1;
+        text-align: center;
+        width: 50%;
 
-          h2{
-            visibility: visible;
-            
-      
+        @media (max-width:758px) {
+          width: 72%;
+        }
+
+
+        h2 {
+          // visibility: visible;
+          margin-bottom: 40px;
+
+        }
+
+        .text-box {
+          // position: relative;
+          // top: 5em;
+
+
+
+
+          .text-1,
+          .text-2,
+          .text-3 {
+            // position: absolute;
+            font-weight: 500;
+            font-size: 20px;
+            font-family: $family-en;
+            margin-bottom: 60px;
           }
 
-          .text-box{
-            position: relative;
-            top: 5em;
-
-
-            .text-1,.text-2,.text-3{
-              position: absolute;
-              font-weight: 500;
-              font-size: 20px;
-              font-family: $family-en;
-            }
-
-            .text-1{
-              top: 0;
-            }
-
-            .text-2{
-              top: 10rem;
-            }
-
-            .text-3{
-              top: 20rem;
-            }
+          .text-1 {
+            // top: 0;
           }
+
+          .text-2 {
+            // top: 10rem;
+          }
+
+          .text-3 {
+            // top: 20rem;
+          }
+        }
       }
 
-      .concept-img1{
+      .concept-img1 {
         position: absolute;
         top: 10rem;
         right: 0;
         width: 20rem;
-        opacity: .7;
+        opacity: .5;
+
+        @media (max-width:769px) {
+          display: none;
+        }
       }
 
-      .concept-img2{
-         position: absolute;
+      .concept-img2 {
+        position: absolute;
         top: 30rem;
         left: 0rem;
         width: 24rem;
         opacity: .7;
+
+        @media (max-width:769px) {
+          display: none;
+        }
       }
 
-      .concept-img3{
-         position: absolute;
+      .concept-img3 {
+        position: absolute;
         top: 50rem;
         right: 0rem;
         width: 24rem;
         opacity: .7;
+
+        @media (max-width:769px) {
+          display: none;
+        }
       }
     }
 
     // 品質的把關
     .commitment {
-      // outline: 1px solid red;
+      outline: 1px solid red;
       height: auto;
       margin-top: 3rem;
       padding-bottom: 50px;
@@ -149,16 +183,31 @@
         padding-bottom: 20px;
       }
 
-      .title{
-        // outline: 1px solid red;
-        margin-left: 10rem;
-            width: 20rem;
+      .title-wrap {
+        outline: 1px solid red;
+        display: flex;
+        justify-content: center;
       }
 
-      .text{
-        margin-top: 2rem;
-        margin-left: 10rem;
-        width: 80%;
+      .title {
+        outline: 1px solid red;
+        // margin-left: 10rem;
+        width: 20rem;
+      }
+
+      .text-wrap {
+        display: flex;
+        justify-content: center;
+
+      }
+
+      .text {
+        outline: 1px solid red;
+        margin: 2rem;
+        // margin-left: 10rem;
+        width: 60%;
+        text-align: center;
+
       }
 
       .content {
@@ -173,7 +222,7 @@
         .card-box {
           // outline: 1px solid red;
           max-width: 100%;
-          padding:0 30px ;
+          padding: 0 30px;
           display: flex;
           flex-wrap: wrap;
 
@@ -183,11 +232,7 @@
 
     }
 
-    // 規格介紹
 
-    // 我們的茶
-
-    // 最新消息
 
 
     // 聯絡我們
@@ -195,13 +240,9 @@
       font-family: $family-en;
       outline: 1px solid red;
       position: relative;
-
-
       text-align: center;
-      // height:30vh ;
 
       @media (max-width:47.9375em) {
-
         &::before {
           height: 7.8rem !important;
         }
@@ -218,8 +259,6 @@
         @media (max-width:47.9375em) {
           width: 100%;
           padding: 0 2rem;
-
-
         }
 
         .text {
@@ -238,7 +277,7 @@
         height: 12.7rem;
         background: $text;
         background-size: contain;
-        background-repeat: no-repeat;
+        background-repeat: no-referrer;
         content: "";
         z-index: -1;
       }
@@ -246,20 +285,42 @@
       .contact-btn {
         background-color: #d4d1cf;
         position: relative;
-        transition: opacity .35s cubic-bezier(0.39, 0.575, 0.565, 1);
+        // 移除原本的 transition，因為我們要用偽元素來處理
         margin-top: 15px;
         padding: 6.4rem 0;
         height: 300px;
+        overflow: hidden; // 重要：防止偽元素溢出
 
         @media (max-width:47.9375em) {
           padding: 4.8rem 0;
           height: 250px;
         }
 
+        // 使用偽元素創建背景圖片層
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url('/public/images/navBar/pic1.jpg');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          opacity: 0; // 預設透明
+          transition: opacity 0.5s ease-in-out; // 平滑淡入淡出
+          z-index: 1;
+        }
+
+        // 文字層要在背景圖片之上
         p {
+          position: relative;
+          z-index: 2;
           color: $text;
           font-weight: 600;
           font-size: 2rem;
+          transition: color 0.3s ease; // 文字顏色也可以有過渡效果
         }
 
         span {
@@ -270,16 +331,80 @@
           }
         }
 
+        // Hover 效果：讓背景圖片淡入
         &:hover {
-          background-image: url('/public/images/navBar/pic1.jpg');
-          opacity: 1;
-          // 換完圖片要改成contain&註解打開
-          background-size: cover;
-          // background-repeat: no-repeat;
-          z-index: 1;
+          &::before {
+            opacity: 1; // 背景圖片淡入
+          }
+
+          // 可選：hover 時改變文字顏色，讓文字更突出
+          p {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); // 添加陰影讓文字更清楚
+          }
         }
-
-
       }
     }
   }
+
+  // 共用區
+      // 營業資訊
+    .information {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10rem 0;
+
+      .title-wrap{
+        margin-bottom: 50px;
+      }
+
+      .info-wrap {
+        // outline: 1px solid red;
+        width: 100%;
+        display: flex;
+        // padding: 10px;
+        justify-content: center;
+    
+      }
+
+      .info-box {
+        // background-color: rgba($color: #756f4d, $alpha: .6);
+        margin: 0 2% 0;
+        padding-top: 2%;
+        // outline: 1px solid red;
+        // @extend %flex-column;
+        // gap: 3rem;
+
+        .info {
+          width: fit-content;
+          padding: 10px 20px;
+          background-color: $text;
+          outline: 1px solid red;
+          border-radius: 999px;
+          margin-bottom: 2rem;
+
+          .inline {
+
+            border-bottom: 1px solid $background;
+          }
+
+          p {
+            padding: 0 10px;
+            font-weight: 400;
+            color: $background;
+          }
+        }
+      }
+
+      .map-box {
+        width: 40%;
+        height: 25rem;
+
+        iframe {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
