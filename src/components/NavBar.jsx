@@ -3,6 +3,10 @@ import $ from 'jquery'
 import { useEffect } from 'react';
 
 const NavBar = () => {
+    // 滾動到頁面頂部的函數
+    const scrollToTop = () => {
+        window.scrollTo(0, 0)
+    }
     useEffect(() => {
         // 關閉選單的函式
         const closeMenu = () => {
@@ -32,37 +36,37 @@ const NavBar = () => {
         $btn.off('click', handler).on('click', handler);
 
         // 為所有選單項目綁定點擊關閉事件
-        $('.menu-item-1, .menu-item-2, .menu-item-3, .menu-item-4, .menu-item-5, .menu-item-6').off('click.closeMenu').on('click.closeMenu', function() {
+        $('.menu-item-1, .menu-item-2, .menu-item-3, .menu-item-4, .menu-item-5, .menu-item-6').off('click.closeMenu').on('click.closeMenu', function () {
             // 延遲一點關閉，確保路由跳轉能正常執行
             setTimeout(closeMenu, 100);
         });
 
-        $('.menu-item-1').off('mouseenter').on('mouseenter', function() {
+        $('.menu-item-1').off('mouseenter').on('mouseenter', function () {
             $('.mask img').removeClass('current');
             $('.mask img').eq(0).addClass('current');
         });
 
-        $('.menu-item-2').off('mouseenter').on('mouseenter', function() {
+        $('.menu-item-2').off('mouseenter').on('mouseenter', function () {
             $('.mask img').removeClass('current');
             $('.mask img').eq(1).addClass('current');
         });
 
-        $('.menu-item-3').off('mouseenter').on('mouseenter', function() {
+        $('.menu-item-3').off('mouseenter').on('mouseenter', function () {
             $('.mask img').removeClass('current');
             $('.mask img').eq(2).addClass('current');
         });
 
-        $('.menu-item-4').off('mouseenter').on('mouseenter', function() {
+        $('.menu-item-4').off('mouseenter').on('mouseenter', function () {
             $('.mask img').removeClass('current');
             $('.mask img').eq(3).addClass('current');
         });
 
-        $('.menu-item-5').off('mouseenter').on('mouseenter', function() {
+        $('.menu-item-5').off('mouseenter').on('mouseenter', function () {
             $('.mask img').removeClass('current');
             $('.mask img').eq(4).addClass('current');
         });
 
-        $('.menu-item-6').off('mouseenter').on('mouseenter', function() {
+        $('.menu-item-6').off('mouseenter').on('mouseenter', function () {
             $('.mask img').removeClass('current');
             $('.mask img').eq(5).addClass('current');
         });
@@ -71,7 +75,7 @@ const NavBar = () => {
         return () => {
             $btn.off('click', handler);
             $('.menu-item-1, .menu-item-2, .menu-item-3, .menu-item-4, .menu-item-5, .menu-item-6').off('click.closeMenu');
-            for(let i = 1; i <= 6; i++) {
+            for (let i = 1; i <= 6; i++) {
                 $(`.menu-item-${i}`).off('mouseenter');
             }
         };
@@ -81,7 +85,7 @@ const NavBar = () => {
     return (
         <div className='topbar'>
             {/* logo */}
-            <Link to='/' className='logo'>
+            <Link to='/' onClick={scrollToTop} className='logo'>
                 <img src="./images/pic/logo.svg" alt="" />
             </Link>
 
@@ -93,7 +97,7 @@ const NavBar = () => {
                     <nav className='navigation'>
                         <ul>
                             <li >
-                                <Link to="/" className='menu-item-1'>
+                                <Link to="/" onClick={scrollToTop} className='menu-item-1'>
                                     <figure className='sitemap_item_content'>
                                         <p>01</p>
                                         <div>
@@ -105,19 +109,19 @@ const NavBar = () => {
                                 </Link>
                             </li>
                             <li >
-                                <Link to="/Informamtion" className='menu-item-2'>
+                                <Link to="/Information" onClick={scrollToTop} className='menu-item-2'>
                                     <figure className='sitemap_item_content'>
                                         <p>02</p>
                                         <div>
                                             <p>Information </p>
-                                            <p>關於我們</p>
+                                            <p>營業資訊</p>
                                         </div>
                                         <img src="./images/icon/arrow-w.svg" alt="箭頭" />
                                     </figure>
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/Flavor" className='menu-item-3'>
+                                <Link to="/Flavor" onClick={scrollToTop} className='menu-item-3'>
                                     <figure className='sitemap_item_content'>
                                         <p>03</p>
                                         <div>
@@ -129,7 +133,7 @@ const NavBar = () => {
                                 </Link>
                             </li>
                             <li >
-                                <Link to="/FAQ" className='menu-item-4'>
+                                <Link to="/FAQ" onClick={scrollToTop} className='menu-item-4'>
                                     <figure className='sitemap_item_content'>
                                         <p>04</p>
                                         <div>
@@ -141,7 +145,7 @@ const NavBar = () => {
                                 </Link>
                             </li>
                             <li >
-                                <Link to="/" className='menu-item-5'>
+                                <Link to="/OnlineShop" onClick={scrollToTop} className='menu-item-5'>
                                     <figure className='sitemap_item_content'>
                                         <p>05</p>
                                         <div>
@@ -153,7 +157,7 @@ const NavBar = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/ContactUs" className='menu-item-6'>
+                                <Link to="/ContactUs" onClick={scrollToTop} className='menu-item-6'>
                                     <figure className='sitemap_item_content menu-item-6'>
                                         <p>06</p>
                                         <div>

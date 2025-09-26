@@ -13,18 +13,36 @@
         margin-top: 45px;
         width: 500px;
         padding: 0 50px;
+        max-width: 100%;
     }
 
     .img-box{
         width: 120px;
         height: 120px;
         margin-top: 30px;
-        background-color: #bbaaa8;
+        // background-color: #bbaaa8;
         // outline: 1px red solid;
+        position: relative;
+
+        &:after{
+            position: absolute;
+            content: "";
+            width: 90px;
+            height: 90px;
+            display: inline-block;
+            background-color: #bbaaa8;
+            top: 20%;
+            right: 0%;
+            z-index: -1;
+        }
 
         @media (max-width:770px) {
             display: block;
             margin: 0 auto;
+
+            &:after{
+                
+            }
         }
         img{
             width: 100%;
@@ -44,8 +62,11 @@
         h3{
             font-size: 1.5rem;
             line-height: 1.75;
+            margin-bottom: 0;
             @media (max-width:770px) {
                 margin-top: 1em;
+                text-align: center;
+                margin-bottom: 0;
             }
         }
 

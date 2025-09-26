@@ -2,8 +2,7 @@ import { Link } from 'react-router-dom';
 import Commitment from '../data/Commitment.json'
 import CommitmentCard from '../components/CommitmentCard';
 import { useEffect, useState } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 import { ReactLenis, useLenis } from 'lenis/react'
 
 
@@ -11,9 +10,11 @@ const Home = () => {
   // state管理
   const [arrCommitment] = useState(Commitment);
 
-  useEffect(() => {
-    AOS.init();
-  }, [])
+  // 滾動到頁面頂部的函數
+  const scrollToTop = () => {
+    window.scrollTo(0, 0)
+  }
+
 
 
   return (
@@ -28,7 +29,7 @@ const Home = () => {
             <img src="./images/pic/Mask group.png" alt="" />
 
           </figure>
-          <p className='text' data-aos="fade-up">品味世界的紅茶時光，讓香氣與層次交織 <br className='show' /> 陪伴你度過生活中每一個美好瞬間。</p>
+          <p className='text' data-aos="fade-up">品味世界的紅茶時光， <br className='show' />讓香氣與層次交織 <br className='show' /> 陪伴你度過生活中每一個美好瞬間。</p>
           {/* <img src="./images/header.png" alt="" /> */}
         </div>
       </section>
@@ -84,7 +85,7 @@ const Home = () => {
       {/* 營業資訊 */}
       <section className='information'>
         <div className='title-wrap' data-aos="fade-up" data-aos-delay="300">
-          <h2><img src="#" alt="營業資訊" /></h2>
+          <h2><img src="./images/title-box/information.svg" alt="營業資訊" /></h2>
         </div>
 
         <div className='info-wrap' data-aos="fade-up" data-aos-delay="400">
@@ -104,12 +105,12 @@ const Home = () => {
             </address>
           </div>
 
-        <div className='map-box'>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.7546295681077!2d121.52546979999998!3d25.0423998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a970a11a84ad%3A0x58e05f2528812097!2z5ZyL56uL6Ie65YyX5ZWG5qWt5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1753778149565!5m2!1szh-TW!2stw"
-            allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+          <div className='map-box'>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.7546295681077!2d121.52546979999998!3d25.0423998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a970a11a84ad%3A0x58e05f2528812097!2z5ZyL56uL6Ie65YyX5ZWG5qWt5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1753778149565!5m2!1szh-TW!2stw"
+              allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
       </section>
 
@@ -117,7 +118,7 @@ const Home = () => {
       <section className='contact'>
         <div className='container'>
           <p className='text'>不論您有哪些需求，我們都樂於聽聞。 歡迎聯繫我們</p>
-          <Link to='/ContactUs' className='contact-btn'>
+          <Link to='/ContactUs' onClick={scrollToTop} className='contact-btn'>
             <p>Contact us <br /> <span>聯絡我們</span></p>
           </Link>
         </div>

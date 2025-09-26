@@ -2,28 +2,33 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
+  // 滾動到頁面頂部的函數
+  const scrollToTop = () => {
+    window.scrollTo(0, 0)
+  }
+
   return (
     <footer>
         <div className='inner'>
             <nav className='footer-nav'>
                 <ul className='footer-menu'>
                     <li>
-                        <Link to='#'>Home</Link>
+                        <Link to='/' onClick={scrollToTop}>Home</Link>
                     </li>
                     <li>
-                        <Link to='#'>Abouts us</Link>
+                        <Link to='/Information' onClick={scrollToTop}>Information</Link>
                     </li>
                     <li>
-                        <Link to='#'>Flavor</Link>
+                        <Link to='/Flavor' onClick={scrollToTop}>Flavor</Link>
                     </li>
                     <li>
-                        <Link to='#'>FAQ</Link>
+                        <Link to='/FAQ' onClick={scrollToTop}>FAQ</Link>
                     </li>
                     <li>
-                        <Link to='#'>Online shop</Link>
+                        <Link to='/OnlineShop' onClick={scrollToTop}>Online shop</Link>
                     </li>
                     <li>
-                        <Link to='#'>Contact us</Link>
+                        <Link to='/ContactUs' onClick={scrollToTop}>Contact us</Link>
                     </li>
                 </ul>
             </nav>

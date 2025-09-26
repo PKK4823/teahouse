@@ -7,7 +7,7 @@ const Informamtion = () => {
             {/* 營業資訊 */}
             <section className='information'>
                 <div className='title-wrap' data-aos="fade-up" data-aos-delay="300">
-                    <h2><img src="#" alt="營業資訊" /></h2>
+                    <h2><img src="./images/title-box/information.svg" alt="營業資訊" /></h2>
                 </div>
 
                 <div className='info-wrap' data-aos="fade-up" data-aos-delay="400">

@@ -1,52 +1,52 @@
 import React, { useState } from 'react'
 
-const ContactUs = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [formData, setFormData] = useState({
-    service: '',
-    name: '',
-    tel: '',
-    email: '',
-    message: ''
-  });
-
-  // 處理表單輸入
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  // 處理表單提交
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    // 這裡可以加入表單驗證邏輯
-    console.log('表單資料:', formData);
-    
-    // 顯示彈窗
-    setShowModal(true);
-    
-    // 清空表單（可選）
-    setFormData({
+const OnlineShop = () => {
+    const [showModal, setShowModal] = useState(false);
+    const [formData, setFormData] = useState({
       service: '',
       name: '',
       tel: '',
       email: '',
       message: ''
     });
-  };
-
-  // 關閉彈窗
-  const closeModal = () => {
-    setShowModal(false);
-  };
-
+  
+    // 處理表單輸入
+    const handleInputChange = (e) => {
+      const { name, value } = e.target;
+      setFormData(prev => ({
+        ...prev,
+        [name]: value
+      }));
+    };
+  
+    // 處理表單提交
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      
+      // 這裡可以加入表單驗證邏輯
+      console.log('表單資料:', formData);
+      
+      // 顯示彈窗
+      setShowModal(true);
+      
+      // 清空表單（可選）
+      setFormData({
+        service: '',
+        name: '',
+        tel: '',
+        email: '',
+        message: ''
+      });
+    };
+  
+    // 關閉彈窗
+    const closeModal = () => {
+      setShowModal(false);
+    };
   return (
     <main className="contactUs-main">
       <section className="contactUs">
+        <h3>目前線上商店正在開發中，<br/>有任何訂購需求歡迎透過表單聯絡我們</h3>
         <header className="contact-header">
           <h1 className="page-title"> <img src="./images/title-box/contactUs.svg" alt="" /></h1>
           <p className="page-subtitle">不論您有哪些需求，我們都樂於聽聞</p>
@@ -165,4 +165,4 @@ const ContactUs = () => {
   )
 }
 
-export default ContactUs
+export default OnlineShop

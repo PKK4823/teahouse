@@ -2,14 +2,23 @@
   @use '../functions/' as *;
 
   .contactUs-main {
-    height: 70vh;
+    height: 90vh;
+
+    @media (max-width:650px) {
+          height: 90vh;
+        }
+
+        @media (max-width:490px) {
+          height: 135vh;
+        }
 
     h1 {
       text-align: center;
+      margin-bottom: 15px;
     }
 
     .contactUs {
-      margin-top: 20vh;
+      margin: 20vh 0 5vh;
       // color: $background;
       display: flex;
       flex-direction: column;
@@ -18,19 +27,26 @@
 
       .form-container {
         background-color: $light-gray;
-        margin: 2%;
+        margin: 2% ;
         border-radius: 30px;
         padding: 4%;
         width: fit-content;
         // outline: 1px solid red;
         display: flex;
 
+        
+
 
         form {
           display: grid;
           grid-template-columns: repeat(2, minmax(220px, 500px));
           gap: 10px;
+          
           // outline: 1px solid red;
+
+          @media (max-width:650px) {
+          grid-template-columns: repeat(1, minmax(220px, 1fr));
+        }
         }
 
         .form-group {
@@ -39,7 +55,7 @@
 
           input {
             margin-top: 5px;
-            font-size: 16px;
+            font-size: 20px;
             color:$text;
             border-color: $text;
           }
@@ -141,7 +157,7 @@
       }
       
       p {
-        color: lighten($text, 20%);
+        color: $text;
         font-size: 1rem;
         line-height: 1.5;
         margin: 0;
